@@ -4,9 +4,9 @@
   "description": "Outils de maintenance pour la base de données USNR Downtime",
   "main": "index.js",
   "scripts": {
-    "setup-db-tools": "pip install pyodbc python-dotenv",
-    "update-shifts": "python scripts/db_shift_manager.py",
-    "verify-and-fix-shifts": "python scripts/db_shift_manager.py"
+    "setup-db-tools": "\"C:\\Users\\jf.vallee\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe\" -m pip install pyodbc python-dotenv",
+    "update-shifts": "\"C:\\Users\\jf.vallee\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe\" scripts/db_shift_manager.py",
+    "verify-and-fix-shifts": "\"C:\\Users\\jf.vallee\\AppData\\Local\\Python\\pythoncore-3.14-64\\python.exe\" scripts/db_shift_manager.py"
   },
   "keywords": [
     "maintenance",

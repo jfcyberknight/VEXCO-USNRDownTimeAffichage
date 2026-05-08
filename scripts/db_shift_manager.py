@@ -13,8 +13,8 @@ def get_connection():
         # Tentative de récupération des variables standard
         server = os.getenv('DB_SERVER') or os.getenv('DB_HOST')
         database = os.getenv('DB_DATABASE') or os.getenv('DB_NAME')
-        username = os.getenv('DB_UID') or os.getenv('DB_USER')
-        password = os.getenv('DB_PWD') or os.getenv('DB_PASS')
+        username = os.getenv('DB_USERNAME') or os.getenv('DB_UID') or os.getenv('DB_USER')
+        password = os.getenv('DB_PASSWORD') or os.getenv('DB_PWD') or os.getenv('DB_PASS')
         
         if not all([server, database, username, password]):
             print("❌ Erreur: Variables d'environnement manquantes dans le fichier .env")
@@ -28,10 +28,15 @@ def get_connection():
         return None
 
 def format_time(dt):
-    """Formate un objet datetime ou None pour l'affichage."""
+    """Formate un objet datetime, time, str ou None pour l'affichage."""
     if dt is None:
         return "NULL"
-    return dt.strftime('%H:%M:%S')
+    if isinstance(dt, str):
+        return dt
+    try:
+        return dt.strftime('%H:%M:%S')
+    except AttributeError:
+        return str(dt)
 
 def manage_shifts():
     conn = get_connection()
