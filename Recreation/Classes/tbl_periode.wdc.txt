@@ -1,0 +1,22 @@
+tbl_periode est une Classe
+    m_fld_Annee est un entier
+    m_fld_Semaine est un entier
+    m_fld_dateDebut est un chaîne
+    m_fld_dateFin est un chaîne
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(tbl_periode, IDtbl_periode, nID) ALORS
+    FichierVersMémoire(objet, tbl_periode)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, tbl_periode)
+RENVOYER HEnregistre(tbl_periode)

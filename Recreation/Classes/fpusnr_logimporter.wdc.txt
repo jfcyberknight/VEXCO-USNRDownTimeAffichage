@@ -1,0 +1,22 @@
+fpusnr_logimporter est une Classe
+    m_fld_IDNo est un entier
+    m_fld_Date est un Date
+    m_IDLogUSNR est un entier
+    m_fld_DateIdLogUSNR est un Date
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(fpusnr_logimporter, IDfpusnr_logimporter, nID) ALORS
+    FichierVersMémoire(objet, fpusnr_logimporter)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, fpusnr_logimporter)
+RENVOYER HEnregistre(fpusnr_logimporter)

@@ -1,0 +1,4 @@
+Description de l'état : Liste des fpusnr_DowtimeImport
+Format : A4 Paysage
+Corps de l'état :
+- [Rubrique] StartTime (Date et Heure)

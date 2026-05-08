@@ -1,0 +1,21 @@
+tbl_TempsPause est une Classe
+    m_IDTypePause est un entier
+    m_fld_DescriptionPause est un chaîne
+    m_fld_Duree est un entier
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(tbl_TempsPause, IDtbl_TempsPause, nID) ALORS
+    FichierVersMémoire(objet, tbl_TempsPause)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, tbl_TempsPause)
+RENVOYER HEnregistre(tbl_TempsPause)

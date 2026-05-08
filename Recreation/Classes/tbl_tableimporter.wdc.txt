@@ -1,0 +1,20 @@
+tbl_tableimporter est une Classe
+    m_fld_IdImporter est un entier
+    m_fld_NomTable est un chaîne
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(tbl_tableimporter, IDtbl_tableimporter, nID) ALORS
+    FichierVersMémoire(objet, tbl_tableimporter)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, tbl_tableimporter)
+RENVOYER HEnregistre(tbl_tableimporter)

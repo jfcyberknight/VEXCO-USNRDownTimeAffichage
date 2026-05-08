@@ -1,0 +1,17 @@
+Description de l'état : Liste des fpusnr_Arc_downtime_view
+Format : A4 Paysage
+Corps de l'état :
+- [Rubrique] Machine (Chaîne)
+- [Rubrique] DowntimeCode (Chaîne)
+- [Rubrique] Shift (Chaîne)
+- [Rubrique] Crew (Chaîne)
+- [Rubrique] Duration (Décimal)
+- [Rubrique] DateTime (DateTime)
+- [Rubrique] RecordCount (Entier sur 4 octets)
+- [Rubrique] TagNames (Mémo texte)
+- [Rubrique] TagValues (Mémo texte)
+- [Rubrique] TagDateTimeEnd (TagDateTimeEnd)
+- [Rubrique] GroupType (Chaîne)
+- [Rubrique] StartTime (Date et Heure)
+- [Rubrique] EndTime (Date et Heure)
+- [Rubrique] fld_NoDowntime (Entier sur 4 octets)

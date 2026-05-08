@@ -1,0 +1,31 @@
+fpusnr_downtime_view_autre est une Classe
+    m_Machine est un chaîne
+    m_DowntimeCode est un chaîne
+    m_Shift est un chaîne
+    m_Duration est un numérique
+    m_DateTime est un Date
+    m_RecordCount est un entier
+    m_TagStartTime est un DateHeure
+    m_TagNames est un chaîne
+    m_TagValues est un chaîne
+    m_TagDateTimeEnd est un Date
+    m_GroupType est un chaîne
+    m_StartTime est un DateHeure
+    m_fld_NoDowntime est un entier
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(fpusnr_downtime_view_autre, IDfpusnr_downtime_view_autre, nID) ALORS
+    FichierVersMémoire(objet, fpusnr_downtime_view_autre)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, fpusnr_downtime_view_autre)
+RENVOYER HEnregistre(fpusnr_downtime_view_autre)

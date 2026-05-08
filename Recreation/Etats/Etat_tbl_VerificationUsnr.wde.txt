@@ -1,0 +1,12 @@
+Description de l'état : Liste des tbl_VerificationUsnr
+Format : A4 Paysage
+Corps de l'état :
+- [Rubrique] IdVerification (Identifiant automatique (8 octets))
+- [Rubrique] fld_Date (fld_Date)
+- [Rubrique] fld_Quart (Chaîne unicode)
+- [Rubrique] fld_EnvoiFinal (Entier sur 2 octets)
+- [Rubrique] fld_Usager (Chaîne)
+- [Rubrique] fld_DateFait (fld_DateFait)
+- [Rubrique] fld_DateApprouver (fld_DateApprouver)
+- [Rubrique] fld_ApprouverPar (Chaîne)
+- [Rubrique] PK_tbl_VerificationUsnr (Clé composée :)

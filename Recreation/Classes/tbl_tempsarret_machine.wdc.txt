@@ -1,0 +1,22 @@
+tbl_tempsarret_machine est une Classe
+    m_idTempsArretMachine est un entier
+    m_fld_Machine est un chaîne
+    m_fld_TempsArret est un chaîne
+    m_tbl_tempsarret_machine$Machin est un chaîne
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(tbl_tempsarret_machine, IDtbl_tempsarret_machine, nID) ALORS
+    FichierVersMémoire(objet, tbl_tempsarret_machine)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, tbl_tempsarret_machine)
+RENVOYER HEnregistre(tbl_tempsarret_machine)
