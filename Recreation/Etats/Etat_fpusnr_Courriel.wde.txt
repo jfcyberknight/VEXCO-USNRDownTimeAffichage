@@ -1,7 +1,0 @@
-Description de l'état : Liste des fpusnr_Courriel
-Format : A4 Paysage
-Corps de l'état :
-- [Rubrique] uuid (Identifiant Unique)
-- [Rubrique] fld_IdCourriel (Identifiant automatique (8 octets))
-- [Rubrique] fld_courriel (Chaîne)
-- [Rubrique] fld_Directeur (Entier sur 2 octets)

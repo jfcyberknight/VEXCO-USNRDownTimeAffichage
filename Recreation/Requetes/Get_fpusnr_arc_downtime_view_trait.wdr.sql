@@ -1,4 +1,0 @@
--- Requête pour fpusnr_arc_downtime_view_trait (Architect Standard)
-SELECT uuid, idtbl_perteTempstraite, fld_PT_IdPLC, fld_PT_IdQuart, fld_DateDebut, fld_DateFin, fld_Duree, fld_Equipement, fld_Description, fld_DateRapportJour, fld_QuartRapJour, fld_DateQuart, fld_Quart, fld_NoDowntime
-FROM fpusnr_arc_downtime_view_trait
-WHERE uuid = {pUuid}
