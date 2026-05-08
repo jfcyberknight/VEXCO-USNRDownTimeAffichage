@@ -47,6 +47,10 @@ Chaque événement de downtime doit être lié à une machine spécifique (`Mach
 ### R5 : Gestion des Unités
 Le système supporte le mode métrique et impérial (`IsMetric`). Toutes les conversions de volume (`LogVolume`, `LumberVolume`) doivent respecter ce flag pour garantir la précision des rapports.
 
+### R6 : Horaires des Quarts (Schedules)
+Les horaires de début et fin de quarts sont configurables en base de données (`fpusnr_shifttimes`). 
+*   **Lundi Matin :** Le quart de "Jour" commence impérativement à **06h01**. Tout événement survenant avant cette heure le lundi appartient au quart de "Nuit" de la veille.
+
 ## 4. Glossaire Technique
 *   **Bille (Log) :** L'unité brute de bois entrant dans l'usine.
 *   **Downtime :** Temps durant lequel une machine est capable de produire mais ne produit pas pour une raison x ou y.
