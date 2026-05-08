@@ -1,4 +1,5 @@
 fpusnr_downtimemessage est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_fld_IdDownTimeMessage est un entier
     m_fld_DatedernierDowntime est un Date
     m_fld_Messageenvoyer est un entier
@@ -6,11 +7,13 @@ fpusnr_downtimemessage est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_downtimemessage, IDfpusnr_downtimemessage, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_downtimemessage, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_downtimemessage)
     RENVOYER Vrai
 FIN

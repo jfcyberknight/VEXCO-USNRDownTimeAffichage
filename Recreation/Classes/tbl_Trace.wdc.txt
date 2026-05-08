@@ -1,4 +1,5 @@
 tbl_Trace est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_fld_NoTrace est un entier
     m_fld_Fenetre est un chaîne
     m_fld_Usager est un chaîne
@@ -9,11 +10,13 @@ tbl_Trace est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_Trace, IDtbl_Trace, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_Trace, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_Trace)
     RENVOYER Vrai
 FIN

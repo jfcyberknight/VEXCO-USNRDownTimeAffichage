@@ -1,4 +1,4 @@
--- Requête pour tbl_Parametre
-SELECT fld_IDParam, fld_PlusPetiteValeur, fld_EnleverDuRapport
+-- Requête pour tbl_Parametre (Architect Standard)
+SELECT uuid, fld_IDParam, fld_PlusPetiteValeur, fld_EnleverDuRapport
 FROM tbl_Parametre
-WHERE 1=1
+WHERE uuid = {pUuid}

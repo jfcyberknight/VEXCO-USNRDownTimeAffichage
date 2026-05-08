@@ -1,6 +1,7 @@
 Description de l'état : Liste des tbl_Trace
 Format : A4 Paysage
 Corps de l'état :
+- [Rubrique] uuid (Identifiant Unique)
 - [Rubrique] fld_NoTrace (Identifiant automatique (8 octets))
 - [Rubrique] fld_Fenetre (Chaîne)
 - [Rubrique] fld_Usager (Chaîne)

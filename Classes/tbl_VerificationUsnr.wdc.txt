@@ -1,0 +1,27 @@
+tbl_VerificationUsnr est une Classe
+    m_IdVerification est un entier
+    m_fld_Date est un Date
+    m_fld_Quart est un chaîne
+    m_fld_EnvoiFinal est un entier
+    m_fld_Usager est un chaîne
+    m_fld_DateFait est un Date
+    m_fld_DateApprouver est un Date
+    m_fld_ApprouverPar est un chaîne
+    m_PK_tbl_VerificationUsnr est un chaîne
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(tbl_VerificationUsnr, IDtbl_VerificationUsnr, nID) ALORS
+    FichierVersMémoire(objet, tbl_VerificationUsnr)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, tbl_VerificationUsnr)
+RENVOYER HEnregistre(tbl_VerificationUsnr)

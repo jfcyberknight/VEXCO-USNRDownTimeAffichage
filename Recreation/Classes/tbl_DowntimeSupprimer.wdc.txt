@@ -1,15 +1,18 @@
 tbl_DowntimeSupprimer est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_fld_DowntimeDelete est un entier
     m_fld_StartTime est un DateHeure
 
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_DowntimeSupprimer, IDtbl_DowntimeSupprimer, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_DowntimeSupprimer, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_DowntimeSupprimer)
     RENVOYER Vrai
 FIN

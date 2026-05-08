@@ -1,4 +1,5 @@
 tbl_Connexion est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_IDtbl_Connexion est un entier
     m_fld_NomConnexion est un chaîne
     m_fld_Serveur est un chaîne
@@ -8,11 +9,13 @@ tbl_Connexion est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_Connexion, IDtbl_Connexion, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_Connexion, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_Connexion)
     RENVOYER Vrai
 FIN

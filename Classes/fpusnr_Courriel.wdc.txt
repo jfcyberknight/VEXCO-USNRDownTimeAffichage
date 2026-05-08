@@ -1,0 +1,21 @@
+fpusnr_Courriel est une Classe
+    m_fld_IdCourriel est un entier
+    m_fld_courriel est un chaîne
+    m_fld_Directeur est un entier
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(fpusnr_Courriel, IDfpusnr_Courriel, nID) ALORS
+    FichierVersMémoire(objet, fpusnr_Courriel)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, fpusnr_Courriel)
+RENVOYER HEnregistre(fpusnr_Courriel)

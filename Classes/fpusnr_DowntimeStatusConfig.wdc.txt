@@ -1,0 +1,25 @@
+fpusnr_DowntimeStatusConfig est une Classe
+    m_Code est un chaîne
+    m_Colour est un numérique
+    m_Group est un chaîne
+    m_Renamable est un entier
+    m_Description est un chaîne
+    m_Source est un chaîne
+    m_PK_DowntimeStatusConfig est un chaîne
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(fpusnr_DowntimeStatusConfig, IDfpusnr_DowntimeStatusConfig, nID) ALORS
+    FichierVersMémoire(objet, fpusnr_DowntimeStatusConfig)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, fpusnr_DowntimeStatusConfig)
+RENVOYER HEnregistre(fpusnr_DowntimeStatusConfig)

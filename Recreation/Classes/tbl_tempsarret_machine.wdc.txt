@@ -1,4 +1,5 @@
 tbl_tempsarret_machine est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_idTempsArretMachine est un entier
     m_fld_Machine est un chaîne
     m_fld_TempsArret est un chaîne
@@ -7,11 +8,13 @@ tbl_tempsarret_machine est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_tempsarret_machine, IDtbl_tempsarret_machine, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_tempsarret_machine, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_tempsarret_machine)
     RENVOYER Vrai
 FIN

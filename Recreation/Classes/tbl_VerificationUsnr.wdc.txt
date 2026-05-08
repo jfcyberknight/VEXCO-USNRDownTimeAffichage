@@ -1,4 +1,5 @@
 tbl_VerificationUsnr est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_IdVerification est un entier
     m_fld_Date est un Date
     m_fld_Quart est un chaîne
@@ -12,11 +13,13 @@ tbl_VerificationUsnr est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_VerificationUsnr, IDtbl_VerificationUsnr, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_VerificationUsnr, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_VerificationUsnr)
     RENVOYER Vrai
 FIN

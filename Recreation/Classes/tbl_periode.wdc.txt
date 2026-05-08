@@ -1,4 +1,5 @@
 tbl_periode est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_fld_Annee est un entier
     m_fld_Semaine est un entier
     m_fld_dateDebut est un chaîne
@@ -7,11 +8,13 @@ tbl_periode est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_periode, IDtbl_periode, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_periode, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_periode)
     RENVOYER Vrai
 FIN

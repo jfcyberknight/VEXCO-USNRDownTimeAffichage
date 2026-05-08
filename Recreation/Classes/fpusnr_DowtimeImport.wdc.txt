@@ -1,14 +1,17 @@
 fpusnr_DowtimeImport est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_StartTime est un DateHeure
 
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_DowtimeImport, IDfpusnr_DowtimeImport, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_DowtimeImport, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_DowtimeImport)
     RENVOYER Vrai
 FIN

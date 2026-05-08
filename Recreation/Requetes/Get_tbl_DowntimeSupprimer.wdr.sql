@@ -1,4 +1,4 @@
--- Requête pour tbl_DowntimeSupprimer
-SELECT fld_DowntimeDelete, fld_StartTime
+-- Requête pour tbl_DowntimeSupprimer (Architect Standard)
+SELECT uuid, fld_DowntimeDelete, fld_StartTime
 FROM tbl_DowntimeSupprimer
-WHERE 1=1
+WHERE uuid = {pUuid}

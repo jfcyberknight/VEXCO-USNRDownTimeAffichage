@@ -1,4 +1,5 @@
 tbl_TempsPause est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_IDTypePause est un entier
     m_fld_DescriptionPause est un chaîne
     m_fld_Duree est un entier
@@ -6,11 +7,13 @@ tbl_TempsPause est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_TempsPause, IDtbl_TempsPause, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_TempsPause, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_TempsPause)
     RENVOYER Vrai
 FIN

@@ -1,6 +1,7 @@
 Description de l'état : Liste des tbl_Connexion
 Format : A4 Paysage
 Corps de l'état :
+- [Rubrique] uuid (Identifiant Unique)
 - [Rubrique] IDtbl_Connexion (Identifiant de tbl_Connexion)
 - [Rubrique] fld_NomConnexion (Chaîne)
 - [Rubrique] fld_Serveur (Chaîne)

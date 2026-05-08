@@ -1,0 +1,21 @@
+fpusnr_downtimemessage est une Classe
+    m_fld_IdDownTimeMessage est un entier
+    m_fld_DatedernierDowntime est un Date
+    m_fld_Messageenvoyer est un entier
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(fpusnr_downtimemessage, IDfpusnr_downtimemessage, nID) ALORS
+    FichierVersMémoire(objet, fpusnr_downtimemessage)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, fpusnr_downtimemessage)
+RENVOYER HEnregistre(fpusnr_downtimemessage)

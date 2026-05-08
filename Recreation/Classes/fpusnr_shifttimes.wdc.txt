@@ -1,4 +1,5 @@
 fpusnr_shifttimes est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_ShiftId est un entier
     m_MondayStart est un DateHeure
     m_MondayEnd est un DateHeure
@@ -18,11 +19,13 @@ fpusnr_shifttimes est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_shifttimes, IDfpusnr_shifttimes, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_shifttimes, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_shifttimes)
     RENVOYER Vrai
 FIN

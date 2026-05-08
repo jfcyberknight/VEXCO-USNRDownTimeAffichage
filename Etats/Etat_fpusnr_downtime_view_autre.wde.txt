@@ -1,0 +1,16 @@
+Description de l'état : Liste des fpusnr_downtime_view_autre
+Format : A4 Paysage
+Corps de l'état :
+- [Rubrique] Machine (Chaîne)
+- [Rubrique] DowntimeCode (Chaîne)
+- [Rubrique] Shift (Chaîne)
+- [Rubrique] Duration (Décimal)
+- [Rubrique] DateTime (DateTime)
+- [Rubrique] RecordCount (Entier sur 4 octets)
+- [Rubrique] TagStartTime (Date et Heure)
+- [Rubrique] TagNames (Mémo texte)
+- [Rubrique] TagValues (Mémo texte)
+- [Rubrique] TagDateTimeEnd (TagDateTimeEnd)
+- [Rubrique] GroupType (Chaîne)
+- [Rubrique] StartTime (Date et Heure)
+- [Rubrique] fld_NoDowntime (Identifiant automatique (4 octets))

@@ -1,6 +1,7 @@
 Description de l'état : Liste des fpusnr_shift_logdetailArc
 Format : A4 Paysage
 Corps de l'état :
+- [Rubrique] uuid (Identifiant Unique)
 - [Rubrique] LogId (Entier sur 4 octets)
 - [Rubrique] MachineId (Entier sur 4 octets)
 - [Rubrique] StemId (Entier sur 4 octets)

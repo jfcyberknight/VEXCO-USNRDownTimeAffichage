@@ -1,15 +1,18 @@
 tbl_tableimporter est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_fld_IdImporter est un entier
     m_fld_NomTable est un chaîne
 
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(tbl_tableimporter, IDtbl_tableimporter, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(tbl_tableimporter, uuid, sUUID) ALORS
     FichierVersMémoire(objet, tbl_tableimporter)
     RENVOYER Vrai
 FIN

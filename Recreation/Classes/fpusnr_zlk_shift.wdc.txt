@@ -1,4 +1,5 @@
 fpusnr_zlk_shift est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_ShiftNumber est un entier
     m_ShiftName est un chaîne
     m_PLCShiftNumber est un entier
@@ -6,11 +7,13 @@ fpusnr_zlk_shift est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_zlk_shift, IDfpusnr_zlk_shift, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_zlk_shift, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_zlk_shift)
     RENVOYER Vrai
 FIN

@@ -1,4 +1,5 @@
 fpusnr_DowntimeStatusConfig est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_Code est un chaîne
     m_Colour est un numérique
     m_Group est un chaîne
@@ -10,11 +11,13 @@ fpusnr_DowntimeStatusConfig est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_DowntimeStatusConfig, IDfpusnr_DowntimeStatusConfig, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_DowntimeStatusConfig, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_DowntimeStatusConfig)
     RENVOYER Vrai
 FIN

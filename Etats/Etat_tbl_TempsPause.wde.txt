@@ -1,0 +1,6 @@
+Description de l'état : Liste des tbl_TempsPause
+Format : A4 Paysage
+Corps de l'état :
+- [Rubrique] IDTypePause (Identifiant automatique (4 octets))
+- [Rubrique] fld_DescriptionPause (Chaîne unicode)
+- [Rubrique] fld_Duree (Entier sur 4 octets)

@@ -1,4 +1,5 @@
 CREATE TABLE fpusnr_arc_log_view (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     MachineDescription NVARCHAR(50),
     DateTime DATE,
     Shift NVARCHAR(50),
@@ -104,6 +105,7 @@ CREATE TABLE fpusnr_arc_log_view (
 );
 
 CREATE TABLE fpusnr_log_view (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     MachineDescription NVARCHAR(50),
     DateTime DATE,
     Shift NVARCHAR(50),
@@ -205,10 +207,11 @@ CREATE TABLE fpusnr_log_view (
     VolumeUnits_2 NVARCHAR(50),
     VolumeType_3 NVARCHAR(50),
     VolumeUnits_3 NVARCHAR(255),
-    IDLogView INT IDENTITY(1,1) PRIMARY KEY
+    IDLogView INT
 );
 
 CREATE TABLE fpusnr_shift_logdetail (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     LogId INT,
     MachineId INT,
     StemId INT,
@@ -262,6 +265,7 @@ CREATE TABLE fpusnr_shift_logdetail (
 );
 
 CREATE TABLE fpusnr_shift_logdetailArc (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     LogId INT,
     MachineId INT,
     StemId INT,
@@ -315,6 +319,7 @@ CREATE TABLE fpusnr_shift_logdetailArc (
 );
 
 CREATE TABLE fpusnr_DowntimeStatusConfig (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Code NVARCHAR(50),
     Colour DECIMAL(18,4),
     Group NVARCHAR(50),
@@ -325,6 +330,7 @@ CREATE TABLE fpusnr_DowntimeStatusConfig (
 );
 
 CREATE TABLE fpusnr_Arc_downtime_view (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Machine NVARCHAR(50),
     DowntimeCode NVARCHAR(50),
     Shift NVARCHAR(50),
@@ -342,6 +348,7 @@ CREATE TABLE fpusnr_Arc_downtime_view (
 );
 
 CREATE TABLE fpusnr_arc_downtime_view_autre (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Machine NVARCHAR(50),
     DowntimeCode NVARCHAR(50),
     Shift NVARCHAR(50),
@@ -358,6 +365,7 @@ CREATE TABLE fpusnr_arc_downtime_view_autre (
 );
 
 CREATE TABLE fpusnr_downtime_view (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Machine NVARCHAR(50),
     DowntimeCode NVARCHAR(50),
     Shift NVARCHAR(50),
@@ -370,7 +378,7 @@ CREATE TABLE fpusnr_downtime_view (
     TagDateTimeEnd DATE,
     GroupType NVARCHAR(50),
     StartTime DATETIME2,
-    fld_NoDowntime INT IDENTITY(1,1) PRIMARY KEY,
+    fld_NoDowntime INT,
     fld_Commentaire NVARCHAR(50),
     fld_PasUnArret INT,
     fld_DurationBase DECIMAL(18,4),
@@ -378,7 +386,7 @@ CREATE TABLE fpusnr_downtime_view (
     fld_ModifierPar NVARCHAR(30),
     _dta_index_fpusnr_downtime_vi NVARCHAR(MAX),
     StartTimeDownTimeCodeShiftno NVARCHAR(MAX),
-    idtbl_perteTempstraite INT IDENTITY(1,1) PRIMARY KEY,
+    idtbl_perteTempstraite INT,
     fld_PT_IdPLC FLOAT,
     fld_PT_IdQuart FLOAT,
     fld_DateDebut DATE,
@@ -395,6 +403,7 @@ CREATE TABLE fpusnr_downtime_view (
 );
 
 CREATE TABLE fpusnr_downtime_view_autre (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Machine NVARCHAR(50),
     DowntimeCode NVARCHAR(50),
     Shift NVARCHAR(50),
@@ -407,10 +416,11 @@ CREATE TABLE fpusnr_downtime_view_autre (
     TagDateTimeEnd DATE,
     GroupType NVARCHAR(50),
     StartTime DATETIME2,
-    fld_NoDowntime INT IDENTITY(1,1) PRIMARY KEY
+    fld_NoDowntime INT
 );
 
 CREATE TABLE tbl_periode (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     fld_Annee INT,
     fld_Semaine INT,
     fld_dateDebut NVARCHAR(MAX),
@@ -418,7 +428,8 @@ CREATE TABLE tbl_periode (
 );
 
 CREATE TABLE tbl_VerificationUsnr (
-    IdVerification INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    IdVerification INT,
     fld_Date DATE,
     fld_Quart NVARCHAR(10),
     fld_EnvoiFinal SMALLINT,
@@ -430,7 +441,8 @@ CREATE TABLE tbl_VerificationUsnr (
 );
 
 CREATE TABLE tbl_Connexion (
-    IDtbl_Connexion INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    IDtbl_Connexion INT,
     fld_NomConnexion NVARCHAR(50),
     fld_Serveur NVARCHAR(50),
     fld_MotPasse NVARCHAR(50),
@@ -438,7 +450,8 @@ CREATE TABLE tbl_Connexion (
 );
 
 CREATE TABLE fpusnr_downtime_view_traiter (
-    idtbl_perteTempstraite INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    idtbl_perteTempstraite INT,
     fld_PT_IdPLC FLOAT,
     fld_PT_IdQuart FLOAT,
     fld_DateDebut DATE,
@@ -459,7 +472,8 @@ CREATE TABLE fpusnr_downtime_view_traiter (
 );
 
 CREATE TABLE tbl_Trace (
-    fld_NoTrace INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    fld_NoTrace INT,
     fld_Fenetre NVARCHAR(50),
     fld_Usager NVARCHAR(30),
     fld_StartTime NVARCHAR(50),
@@ -468,26 +482,30 @@ CREATE TABLE tbl_Trace (
 );
 
 CREATE TABLE fpusnr_Courriel (
-    fld_IdCourriel INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    fld_IdCourriel INT,
     fld_courriel NVARCHAR(70),
     fld_Directeur SMALLINT
 );
 
 CREATE TABLE fpusnr_arc_logimporter (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     fld_IDNo INT,
     fld_Date DATE,
     IDLogUSNR INT
 );
 
 CREATE TABLE fpusnr_logimporter (
-    fld_IDNo INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    fld_IDNo INT,
     fld_Date DATE,
     IDLogUSNR INT,
     fld_DateIdLogUSNR DATE
 );
 
 CREATE TABLE fpusnr_arc_downtime_view_traiter (
-    idtbl_perteTempstraite INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    idtbl_perteTempstraite INT,
     fld_PT_IdPLC FLOAT,
     fld_PT_IdQuart FLOAT,
     fld_DateDebut DATE,
@@ -503,7 +521,8 @@ CREATE TABLE fpusnr_arc_downtime_view_traiter (
 );
 
 CREATE TABLE fpusnr_downtime_enmarche_traiter (
-    idtbl_perteTempstraite INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    idtbl_perteTempstraite INT,
     fld_PT_IdPLC FLOAT,
     fld_PT_IdQuart FLOAT,
     fld_DateDebut DATE,
@@ -519,46 +538,54 @@ CREATE TABLE fpusnr_downtime_enmarche_traiter (
 );
 
 CREATE TABLE fpusnr_downtimemessage (
-    fld_IdDownTimeMessage INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    fld_IdDownTimeMessage INT,
     fld_DatedernierDowntime DATE,
     fld_Messageenvoyer SMALLINT
 );
 
 CREATE TABLE tbl_PasTempsArret (
-    fld_IDPasUnArret INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    fld_IDPasUnArret INT,
     fld_DescPasUnArret NVARCHAR(50)
 );
 
 CREATE TABLE tbl_TempsPause (
-    IDTypePause INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    IDTypePause INT,
     fld_DescriptionPause NVARCHAR(25),
     fld_Duree INT
 );
 
 CREATE TABLE tbl_DowntimeSupprimer (
-    fld_DowntimeDelete INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    fld_DowntimeDelete INT,
     fld_StartTime DATETIME2
 );
 
 CREATE TABLE tbl_Parametre (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     fld_IDParam DECIMAL(18,4),
     fld_PlusPetiteValeur DECIMAL(18,4),
     fld_EnleverDuRapport DECIMAL(18,4)
 );
 
 CREATE TABLE tbl_tableimporter (
-    fld_IdImporter INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    fld_IdImporter INT,
     fld_NomTable NVARCHAR(45)
 );
 
 CREATE TABLE tbl_tempsarret_machine (
-    idTempsArretMachine INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    idTempsArretMachine INT,
     fld_Machine NVARCHAR(45),
     fld_TempsArret NVARCHAR(50),
     tbl_tempsarret_machine$Machin NVARCHAR(MAX)
 );
 
 CREATE TABLE fpusnr_shifttimes (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     ShiftId INT,
     MondayStart DATETIME2,
     MondayEnd DATETIME2,
@@ -577,16 +604,19 @@ CREATE TABLE fpusnr_shifttimes (
 );
 
 CREATE TABLE fpusnr_zlk_shift (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     ShiftNumber INT,
     ShiftName NVARCHAR(50),
     PLCShiftNumber INT
 );
 
 CREATE TABLE fpusnr_DowtimeImport (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     StartTime DATETIME2
 );
 
 CREATE TABLE fpusnr_arc_downtime_view_autr (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Machine NVARCHAR(50),
     DowntimeCode NVARCHAR(50),
     Shift NVARCHAR(50),
@@ -603,7 +633,8 @@ CREATE TABLE fpusnr_arc_downtime_view_autr (
 );
 
 CREATE TABLE fpusnr_arc_downtime_view_trait (
-    idtbl_perteTempstraite INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    idtbl_perteTempstraite INT,
     fld_PT_IdPLC FLOAT,
     fld_PT_IdQuart FLOAT,
     fld_DateDebut DATE,
@@ -619,7 +650,8 @@ CREATE TABLE fpusnr_arc_downtime_view_trait (
 );
 
 CREATE TABLE fpusnr_downtime_enmarche_tra (
-    idtbl_perteTempstraite INT IDENTITY(1,1) PRIMARY KEY,
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
+    idtbl_perteTempstraite INT,
     fld_PT_IdPLC FLOAT,
     fld_PT_IdQuart FLOAT,
     fld_DateDebut DATE,
@@ -635,6 +667,7 @@ CREATE TABLE fpusnr_downtime_enmarche_tra (
 );
 
 CREATE TABLE fpusnr_downtime_vi (
+    uuid UNIQUEIDENTIFIER DEFAULT NEWID() PRIMARY KEY,
     Machine NVARCHAR(50),
     DowntimeCode NVARCHAR(50),
     Shift NVARCHAR(50),
@@ -647,7 +680,7 @@ CREATE TABLE fpusnr_downtime_vi (
     TagDateTimeEnd DATE,
     GroupType NVARCHAR(50),
     StartTime DATETIME2,
-    fld_NoDowntime INT IDENTITY(1,1) PRIMARY KEY,
+    fld_NoDowntime INT,
     fld_Commentaire NVARCHAR(50),
     fld_PasUnArret INT,
     fld_DurationBase DECIMAL(18,4),
@@ -655,7 +688,7 @@ CREATE TABLE fpusnr_downtime_vi (
     fld_ModifierPar NVARCHAR(30),
     _dta_index_fpusnr_downtime_vi NVARCHAR(MAX),
     StartTimeDownTimeCodeShiftno NVARCHAR(MAX),
-    idtbl_perteTempstraite INT IDENTITY(1,1) PRIMARY KEY,
+    idtbl_perteTempstraite INT,
     fld_PT_IdPLC FLOAT,
     fld_PT_IdQuart FLOAT,
     fld_DateDebut DATE,

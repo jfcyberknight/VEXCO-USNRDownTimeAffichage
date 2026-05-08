@@ -1,0 +1,20 @@
+tbl_DowntimeSupprimer est une Classe
+    m_fld_DowntimeDelete est un entier
+    m_fld_StartTime est un DateHeure
+
+FIN
+
+PROCÉDURE Constructeur()
+
+PROCÉDURE Destructeur()
+
+PROCÉDURE Charger(nID)
+SI HLitRecherchePremier(tbl_DowntimeSupprimer, IDtbl_DowntimeSupprimer, nID) ALORS
+    FichierVersMémoire(objet, tbl_DowntimeSupprimer)
+    RENVOYER Vrai
+FIN
+RENVOYER Faux
+
+PROCÉDURE Enregistrer()
+MémoireVersFichier(objet, tbl_DowntimeSupprimer)
+RENVOYER HEnregistre(tbl_DowntimeSupprimer)

@@ -1,4 +1,5 @@
 fpusnr_Courriel est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_fld_IdCourriel est un entier
     m_fld_courriel est un chaîne
     m_fld_Directeur est un entier
@@ -6,11 +7,13 @@ fpusnr_Courriel est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_Courriel, IDfpusnr_Courriel, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_Courriel, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_Courriel)
     RENVOYER Vrai
 FIN

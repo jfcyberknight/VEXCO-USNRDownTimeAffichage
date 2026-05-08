@@ -1,6 +1,7 @@
 Description de l'état : Liste des tbl_VerificationUsnr
 Format : A4 Paysage
 Corps de l'état :
+- [Rubrique] uuid (Identifiant Unique)
 - [Rubrique] IdVerification (Identifiant automatique (8 octets))
 - [Rubrique] fld_Date (fld_Date)
 - [Rubrique] fld_Quart (Chaîne unicode)

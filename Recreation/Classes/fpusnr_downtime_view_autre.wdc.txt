@@ -1,4 +1,5 @@
 fpusnr_downtime_view_autre est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_Machine est un chaîne
     m_DowntimeCode est un chaîne
     m_Shift est un chaîne
@@ -16,11 +17,13 @@ fpusnr_downtime_view_autre est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_downtime_view_autre, IDfpusnr_downtime_view_autre, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_downtime_view_autre, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_downtime_view_autre)
     RENVOYER Vrai
 FIN

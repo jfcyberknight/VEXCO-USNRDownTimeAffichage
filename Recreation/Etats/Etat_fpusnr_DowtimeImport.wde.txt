@@ -1,4 +1,5 @@
 Description de l'état : Liste des fpusnr_DowtimeImport
 Format : A4 Paysage
 Corps de l'état :
+- [Rubrique] uuid (Identifiant Unique)
 - [Rubrique] StartTime (Date et Heure)

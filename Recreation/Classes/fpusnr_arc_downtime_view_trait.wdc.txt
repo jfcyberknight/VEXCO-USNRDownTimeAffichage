@@ -1,4 +1,5 @@
 fpusnr_arc_downtime_view_trait est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_idtbl_perteTempstraite est un entier
     m_fld_PT_IdPLC est un réel
     m_fld_PT_IdQuart est un réel
@@ -16,11 +17,13 @@ fpusnr_arc_downtime_view_trait est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_arc_downtime_view_trait, IDfpusnr_arc_downtime_view_trait, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_arc_downtime_view_trait, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_arc_downtime_view_trait)
     RENVOYER Vrai
 FIN

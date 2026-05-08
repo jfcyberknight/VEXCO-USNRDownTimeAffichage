@@ -1,4 +1,4 @@
--- Requête pour tbl_tempsarret_machine
-SELECT idTempsArretMachine, fld_Machine, fld_TempsArret, tbl_tempsarret_machine$Machin
+-- Requête pour tbl_tempsarret_machine (Architect Standard)
+SELECT uuid, idTempsArretMachine, fld_Machine, fld_TempsArret, tbl_tempsarret_machine$Machin
 FROM tbl_tempsarret_machine
-WHERE 1=1
+WHERE uuid = {pUuid}

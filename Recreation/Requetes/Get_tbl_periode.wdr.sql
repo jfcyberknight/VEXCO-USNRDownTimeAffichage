@@ -1,4 +1,4 @@
--- Requête pour tbl_periode
-SELECT fld_Annee, fld_Semaine, fld_dateDebut, fld_dateFin
+-- Requête pour tbl_periode (Architect Standard)
+SELECT uuid, fld_Annee, fld_Semaine, fld_dateDebut, fld_dateFin
 FROM tbl_periode
-WHERE 1=1
+WHERE uuid = {pUuid}

@@ -1,4 +1,4 @@
--- Requête pour fpusnr_DowtimeImport
-SELECT StartTime
+-- Requête pour fpusnr_DowtimeImport (Architect Standard)
+SELECT uuid, StartTime
 FROM fpusnr_DowtimeImport
-WHERE 1=1
+WHERE uuid = {pUuid}

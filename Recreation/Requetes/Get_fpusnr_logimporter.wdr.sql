@@ -1,4 +1,4 @@
--- Requête pour fpusnr_logimporter
-SELECT fld_IDNo, fld_Date, IDLogUSNR, fld_DateIdLogUSNR
+-- Requête pour fpusnr_logimporter (Architect Standard)
+SELECT uuid, fld_IDNo, fld_Date, IDLogUSNR, fld_DateIdLogUSNR
 FROM fpusnr_logimporter
-WHERE 1=1
+WHERE uuid = {pUuid}

@@ -1,4 +1,5 @@
 fpusnr_shift_logdetailArc est une Classe
+    m_uuid est un chaîne // Identifiant unique stable (UUID)
     m_LogId est un entier
     m_MachineId est un entier
     m_StemId est un entier
@@ -53,11 +54,13 @@ fpusnr_shift_logdetailArc est une Classe
 FIN
 
 PROCÉDURE Constructeur()
+// Initialisation du UUID si nouveau
+SI m_uuid = "" ALORS m_uuid = DonneGUID(guidFormatDashed)
 
 PROCÉDURE Destructeur()
 
-PROCÉDURE Charger(nID)
-SI HLitRecherchePremier(fpusnr_shift_logdetailArc, IDfpusnr_shift_logdetailArc, nID) ALORS
+PROCÉDURE ChargerParUUID(sUUID)
+SI HLitRecherchePremier(fpusnr_shift_logdetailArc, uuid, sUUID) ALORS
     FichierVersMémoire(objet, fpusnr_shift_logdetailArc)
     RENVOYER Vrai
 FIN

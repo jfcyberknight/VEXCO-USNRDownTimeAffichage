@@ -1,6 +1,7 @@
 Description de l'état : Liste des tbl_Parametre
 Format : A4 Paysage
 Corps de l'état :
+- [Rubrique] uuid (Identifiant Unique)
 - [Rubrique] fld_IDParam (Décimal)
 - [Rubrique] fld_PlusPetiteValeur (Décimal)
 - [Rubrique] fld_EnleverDuRapport (Décimal)
