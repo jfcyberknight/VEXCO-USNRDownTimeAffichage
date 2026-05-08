@@ -6,8 +6,10 @@ fpusnr_shifttimes est une Classe
     m_TuesdayEnd est un DateHeure
     m_WednesdayStart est un DateHeure
     m_WednesdayEnd est un DateHeure
+    m_ThursdayStart est un DateHeure
     m_ThursdayEnd est un DateHeure
     m_FridayStart est un DateHeure
+    m_FridayEnd est un DateHeure
     m_SaturdayStart est un DateHeure
     m_SaturdayEnd est un DateHeure
     m_SundayStart est un DateHeure
