@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "setup-db-tools": "pip install pyodbc python-dotenv",
-    "update-shifts": "python scripts/db_shift_manager.py"
+    "update-shifts": "python scripts/db_shift_manager.py",
+    "verify-and-fix-shifts": "python scripts/db_shift_manager.py"
   },
   "keywords": [
     "maintenance",
