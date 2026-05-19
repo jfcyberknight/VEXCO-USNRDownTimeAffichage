@@ -1,4 +1,4 @@
-import os
+﻿import os
 import sys
 import uuid
 import hashlib
@@ -65,16 +65,16 @@ def chunk_text(text, filename, chunk_size=1000, overlap=100):
     # Découpage sémantique : priorité aux blocs logiques
     # Patterns pour WinDev, SQL et Markdown
     block_starts = [
-        r"(?i)^[a-z0-9_]+ est une Classe",
-        r"(?i)^PROCÉDURE",
-        r"(?i)^CREATE TABLE",
-        r"(?i)^-- Requête",
-        r"(?i)^# ",
+        r"^[a-z0-9_]+ est une Classe",
+        r"^PROCÉDURE",
+        r"^CREATE TABLE",
+        r"^-- Requête",
+        r"^# ",
         r"\n\s*\n"
     ]
     combined_pattern = "|".join(block_starts)
     
-    parts = re.split(f"({combined_pattern})", text, flags=re.MULTILINE)
+    parts = re.split(f"({combined_pattern})", text, flags=re.MULTILINE | re.IGNORECASE)
     
     chunks = []
     current_chunk = f"File: {filename}\n\n"
