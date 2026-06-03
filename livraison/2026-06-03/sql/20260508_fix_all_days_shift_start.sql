@@ -3,6 +3,9 @@
 --              et maintien/réinitialisation des autres jours à 07h01.
 -- Architecte: Senior Software Architect
 
+USE fpusnr;
+GO
+
 UPDATE fpusnr_shifttimes
 SET 
     MondayStart = CAST(CONVERT(VARCHAR(10), MondayStart, 120) + ' 06:01:00' AS DATETIME2),

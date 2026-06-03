@@ -3,6 +3,9 @@
 --              dans les tables d'arrêts pour le lundi matin entre 06:01 et 07:00 (lundi uniquement).
 -- Architecte: Senior Software Architect
 
+USE fpusnr;
+GO
+
 -- Forcer lundi = 2 (DATEFIRST 7 = dimanche est jour 1)
 SET DATEFIRST 7;
 

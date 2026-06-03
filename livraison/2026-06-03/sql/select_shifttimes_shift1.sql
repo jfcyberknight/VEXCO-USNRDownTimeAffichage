@@ -1,4 +1,7 @@
 -- Lecture snapshot : quart Jour (ShiftId = 1)
+USE fpusnr;
+GO
+
 SELECT 
     MondayStart, MondayEnd, 
     TuesdayStart, TuesdayEnd, 
