@@ -3,6 +3,9 @@
 --              dans les tables d'arrêts pour le lundi matin entre 06:01 et 07:00 (lundi uniquement).
 -- Architecte: Senior Software Architect
 
+-- Forcer lundi = 2 (DATEFIRST 7 = dimanche est jour 1)
+SET DATEFIRST 7;
+
 -- 1. Table active: fpusnr_downtime_view
 UPDATE fpusnr_downtime_view
 SET Shift = 'Jour',

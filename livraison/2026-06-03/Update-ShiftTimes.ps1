@@ -121,10 +121,19 @@ try {
         $result = $host.ui.PromptForChoice($title, $message, $options, 1)
 
         if ($result -eq 0) {
-            $command.CommandText = $queryUpdate
-            $rowsAffected = $command.ExecuteNonQuery()
-            Write-Host "`nCorrection appliquee ($rowsAffected ligne(s)).`n" -ForegroundColor Green
+            $transaction = $connection.BeginTransaction()
+            $command.Transaction = $transaction
+            try {
+                $command.CommandText = $queryUpdate
+                $rowsAffected = $command.ExecuteNonQuery()
+                $transaction.Commit()
+                Write-Host "`nCorrection appliquee ($rowsAffected ligne(s)).`n" -ForegroundColor Green
+            } catch {
+                $transaction.Rollback()
+                throw $_
+            }
 
+            $command.Transaction = $null
             $command.CommandText = $querySelect
             $readerFinal = $command.ExecuteReader()
             if ($readerFinal.Read()) {
